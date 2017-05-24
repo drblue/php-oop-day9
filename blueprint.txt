@@ -1,0 +1,33 @@
+# User
+- id
+- username
+- name
+- email
+- password
+- basket (Basket)
+- orders[] (Order)
+
+# Product
+- id
+- name
+- price
+
+# Basket
+- id
+- user (User)
+- products[] (Product)
+
+# (Basket_Product)
+- basket (Basket)
+- product (Product)
+- quantity
+
+# Order
+- id
+- user (User)
+- products[] (Product)
+
+# (Order_Product)
+- order (Order)
+- product (Product)
+- quantity
