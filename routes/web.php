@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// products
+Route::get('/products', 'ProductController@index');
+Route::post('/products', 'ProductController@store');
+Route::get('/products/{id}', 'ProductController@show');
+
+// basket
+Route::get('/basket', 'BasketController@index');

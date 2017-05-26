@@ -1,0 +1,16 @@
+namespace App;
+
+$user = User::create(["name" => "John Doe", "email" => "john@doe.org", "password" => bcrypt("doh")]);
+
+$gummianka = Product::create(["name" => "Gummianka", "price" => 20]);
+$gummibat = Product::create(["name" => "Gummibåt", "price" => 1000]);
+
+$user = User::find(1);
+$gummianka = Product::find(1);
+$gummibat = Product::find(2);
+
+$user->basket()->create([]);
+$user->basket->items()->create([]);
+
+$user->basket->items()->create(["product_id" => $gummianka->id, "quantity" => 4]);
+$user->basket->items()->create(["product_id" => $gummibat->id, "quantity" => 1]);

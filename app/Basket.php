@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\BasketItem;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,7 +12,7 @@ class Basket extends Model
     	return $this->belongsTo(User::class);
     }
 
-    public function products() {
-    	return $this->belongsToMany(Product::class)->withPivot('quantity');
+    public function items() {
+    	return $this->hasMany(BasketItem::class);
     }
 }
